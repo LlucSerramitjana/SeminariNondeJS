@@ -4,7 +4,7 @@ import helmet from 'helmet';
 import mongoose from 'mongoose';
 import compression from 'compression';
 import cors from 'cors';
-
+import repostRoutes from './routes/postRoutes';
 import indexRoutes from './routes/indexRoutes';
 import postsRoutes from './routes/usersRoutes';
 
@@ -39,7 +39,7 @@ class Server {
     routes() {
         this.app.use(indexRoutes);
         this.app.use('/api/users', postsRoutes);
-
+        this.app.use('/api/posts', repostRoutes);
     }
 
     start() {
